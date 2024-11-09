@@ -1,0 +1,44 @@
+using System;
+
+public class Car
+{
+    
+    private string brand;
+    private int speed;
+    public string Brand
+    {
+        get { return brand; }
+        set { brand = value; }
+    }
+
+    public int Speed
+    {
+        get { return speed; }
+        set
+        {
+            if (value >= 0 && value <= 240) 
+            {
+                speed = value;
+            }
+            else
+            {
+                Console.WriteLine("سرعت باید بین 0 تا 240 باشد.");
+            }
+        }
+    }
+    public void PrintDetails()
+    {
+        Console.WriteLine($"Brand: {Brand}, Speed: {Speed} km/h");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car myCar = new Car();
+        myCar.Brand = "Toyota";
+        myCar.Speed = 180;
+        myCar.PrintDetails();
+    }
+}
